@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Password Generator</title>
+    <!-- links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 class="text-center display-2 bg-white mb-4">Password Generator</h1>
+
+    <div class="container border rounded bg-white" style="max-width: 400px; height: 280px;">
+        <h3 class="text-center mb-4"><strong>Generate Password</strong></h3>
+        <div class="form-group">
+            <input type="text" readonly  id="display" class="form-control">
+            <label for="slider" class="mt-3">Lenght of password</label>
+            <input type="range" min="0" max="50" name="slider" class="custom-range form-control mb-4" id="slider">
+            
+            <button onclick="generate()" class="btn btn-info">Generate</button>
+            <button onclick="copyPassword()" class="btn btn-info float-right">Copy to clipboard</button>  
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
