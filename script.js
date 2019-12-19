@@ -1,40 +1,30 @@
-//generate random password
-function generate(){
+var char = 'ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz';
+var num = '1234567890';
+var sym = '!@#$%^&*()_+';
 
-    //set password length/complexity
-    let complexity = document.getElementById("slider").value;
+var lengthEl = document.getElementById("slider");
+var numBox = document.getElementById("numbers");
+var symBox = document.getElementById("symbols");
+var btnGenerate = document.getElementById("generate");
+var yourPass = document.getElementById("display");
 
-    //possible password values
-    let values = "ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
+btnGenerate.addEventListener("click",function(e){
+    var characters = char;
+    (numBox.checked) ? characters += num : '';
+    (symBox.checked) ? characters += sym : '';
+    yourPass.value = password(slider.value, characters);
+});
 
-    let password = "";
 
-    //create for loop to choose password characters
-    for(var i = 0; i <= complexity; i++){
-        password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
+
+
+function password(l , characters){
+    var pwd = '';
+
+    for(var i = 0; i <= l; i++){
+        pwd += characters.charAt(Math.floor(Math.random() * characters.length));
     }
-
-    //add password to textbox/display area
-    document.getElementById("display").value = password;
-
-    //add password to previously generated passwords section
-    document.getElementById("lastNums").innerHTML += password + "<br />";
-
-}
-
-//set default length display of 25
-document.getElementById("length").innerHTML = "Length: 25";
-
-//function to set length based on slider position
-document.getElementById("slider").oninput = function(){
-
-    if(document.getElementById("slider").value > 0){
-        document.getElementById("length").innerHTML = "Length: " + document.getElementById("slider").value;
-    }
-    else{
-        document.getElementById("length").innerHTML = "Length: 1";
-    }
-
+    return pwd;
 }
 
 //function to copy password to clipboard
@@ -45,5 +35,4 @@ function copyPassword(){
     document.execCommand("Copy");
 
     alert("Password copied to clipboard!");
-
 }
