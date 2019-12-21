@@ -12,21 +12,31 @@
 <body>
     <h1 class="text-center display-2 bg-white mb-4">Password Generator</h1>
 
-    <div class="container border rounded bg-white" style="max-width: 400px; height: 340px;">
+    <div class="container border rounded bg-white" style="max-width: 400px; height: 390px;">
         <h3 class="text-center mb-4"><strong>Generate Password</strong></h3>
         <div class="form-group">
-            <input type="text" readonly  id="display" class="form-control" placeholder="By default Upper and Lower case letters">
+            <input type="text" readonly  id="display" class="form-control">
             <label for="slider" class="mt-3">Length of password</label>
-            <input type="range" min="0" max="128" name="slider" class="custom-range form-control mb-4" id="slider"></input>
+            <input type="range" min="8" max="129" name="slider" class="custom-range form-control mb-4" id="slider"></input>
 
             <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="symbols">
-            <label class="custom-control-label" for="symbols">Symbols</label>
+             <input type="checkbox" class="custom-control-input" id="upperC">
+             <label class="custom-control-label" for="upperC">Upper Case Letters</label>
             </div>
             
             <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="numbers">
-            <label class="custom-control-label" for="numbers">Numbers</label>
+             <input type="checkbox" class="custom-control-input" id="lowerC">
+             <label class="custom-control-label" for="lowerC">Lower Case Letters</label>
+            </div>
+
+            <div class="custom-control custom-checkbox">
+             <input type="checkbox" class="custom-control-input" id="symbols">
+             <label class="custom-control-label" for="symbols">Symbols</label>
+            </div>
+            
+            <div class="custom-control custom-checkbox">
+             <input type="checkbox" class="custom-control-input" id="numbers">
+             <label class="custom-control-label" for="numbers">Numbers</label>
             </div>
 
             <br>
